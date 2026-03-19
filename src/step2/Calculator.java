@@ -35,4 +35,8 @@ public class Calculator {
         return results;
         }
 
+        void removeResult(){
+            results.removeFirst();
+        }
+
     }
