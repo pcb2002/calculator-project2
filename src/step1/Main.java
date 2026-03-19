@@ -57,7 +57,7 @@ public class Main {
         }catch (InputMismatchException e) {
             System.out.println("양의 정수를 입력해주세요.");
         }
-
+    sc.close();
 
     }
 
