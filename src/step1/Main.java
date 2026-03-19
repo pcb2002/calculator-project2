@@ -27,15 +27,15 @@ public class Main {
                 }
 
                 System.out.print("사칙연산 기호를 입력하세요: ");
-                String ob = sc.next();
+                char ob = sc.next().charAt(0);;
 
                 float result = 0;
 
                 switch (ob){
-                    case "+": result = num1 + num2; break;
-                    case "-": result = num1 - num2; break;
-                    case "*": result = num1 * num2; break;
-                    case "/":
+                    case '+': result = num1 + num2; break;
+                    case '-': result = num1 - num2; break;
+                    case '*': result = num1 * num2; break;
+                    case '/':
                         if (num2 == 0) {
                             System.out.println("0으로 나눌 수 없습니다.");
                             continue; // 다시 계산 루프의 처음으로 돌아감
@@ -58,8 +58,5 @@ public class Main {
             System.out.println("양의 정수를 입력해주세요.");
         }
     sc.close();
-
     }
-
-
 }
