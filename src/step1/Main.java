@@ -1,12 +1,42 @@
 package step1;
 
-//TIP 코드를 <b>실행</b>하려면 <shortcut actionId="Run"/>을(를) 누르거나
-// 에디터 여백에 있는 <icon src="AllIcons.Actions.Execute"/> 아이콘을 클릭하세요.
+import java.util.Scanner;
+
 public class Main {
-    public static void main(String[] args) {
-        //TIP 캐럿을 강조 표시된 텍스트에 놓고 <shortcut actionId="ShowIntentionActions"/>을(를) 누르면
-        // IntelliJ IDEA이(가) 수정을 제안하는 것을 확인할 수 있습니다.
-        System.out.printf("Hello and welcome!");
+
+    public static void main (String[] args){
+
+        Scanner sc = new Scanner(System.in);
+
+
+
+        while(true){
+            System.out.print("첫 번째 숫자를 입력하세요: ");
+            int num1 = sc.nextInt();
+            System.out.print("두 번째 숫자를 입력하세요: ");
+            int num2 = sc.nextInt();
+            System.out.print("사칙연산 기호를 입력하세요: ");
+            String ob = sc.next();
+
+            int result = 0;
+
+            switch (ob){
+                case "+": result = num1 + num2; break;
+                case "-": result = num1 - num2; break;
+                case "*": result = num1 * num2; break;
+                case "/": result = num1 / num2; break;
+            }
+
+            System.out.print("결과: "+ result);
+            System.out.print("더 계산하시겠습니까> (exit 입력 시 종료): ");
+
+            String end = sc.next();
+            if (end.equals("exit")){
+                break;
+            }
+        }
 
     }
+
+
 }
