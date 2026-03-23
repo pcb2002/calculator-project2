@@ -21,6 +21,6 @@ public enum OperatorType {
             if (op.symbol == symbol){
                 return op;
             }
-        }throw new IllegalAccessException("올바른 연산자가 아닙니다: " + symbol);
+        }throw new IllegalArgumentException("올바른 연산자가 아닙니다: " + symbol);
     }
 }
