@@ -41,6 +41,19 @@ public class Main {
                     calculator.removeResult();
                 }
 
+                System.out.print("계산 기록을 조회하시겠습니까? 1.큰 값 2.같은 값 3.작은 값 4.기본 조회 후 넘기기: ");
+                int option = sc.nextInt();
+                if (option == 1 || option == 2 || option == 3){
+                    System.out.print("숫자를 입력해주세요.: ");
+                    double num = sc.nextDouble();
+                    switch(option){
+                        case 1 -> calculator.printOptionOne(num);
+                        case 2 -> calculator.printOptionTwo(num);
+                        case 3 -> calculator.printOptionThree(num);
+                    }
+                }else{
+                    calculator.getResults();
+                }
                 System.out.print("더 계산하시겠습니까? (종료하려면 exit 입력): ");
                 String end = sc.next();
                 if (end.equals("exit")) {

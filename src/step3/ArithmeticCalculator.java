@@ -25,8 +25,28 @@ public class ArithmeticCalculator<T extends Number>{
         return res;
     }
 
-    public List<Double> getResults(){
-        return results;
+    public void getResults() {
+        for (double res : results){
+            System.out.println(res);
+        }
+    }
+
+    public void printOptionOne(double threshold) {
+        results.stream()                 // 1. 스트림 생성
+                .filter(res -> res > threshold) // 2. 필터링 (람다식: 결과값 res가 기준값보다 크면 통과)
+                .forEach(System.out::println);  // 3. 최종 연산 (출력)
+    }
+
+    public void printOptionTwo(double threshold) {
+        results.stream()                 // 1. 스트림 생성
+                .filter(res -> res == threshold) // 2. 필터링 (람다식: 결과값 res가 기준값과 같으면 통과)
+                .forEach(System.out::println);  // 3. 최종 연산 (출력)
+    }
+
+    public void printOptionThree(double threshold) {
+        results.stream()                 // 1. 스트림 생성
+                .filter(res -> res < threshold) // 2. 필터링 (람다식: 결과값 res가 기준값보다 작으면 통과)
+                .forEach(System.out::println);  // 3. 최종 연산 (출력)
     }
 
     void removeResult(){
