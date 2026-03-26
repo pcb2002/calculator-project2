@@ -4,7 +4,11 @@ import java.util.List;
 
 // T는 Number를 상속받은 타입(Integer, Double, Float 등)만 가능
 public class ArithmeticCalculator<T extends Number>{
-    private List<Double> results = new ArrayList<>();
+    private List<Double> resultList;
+
+    public ArithmeticCalculator(List<Double> resultList) {
+        this.resultList = resultList;
+    }
 
     public double calculate(T num1, T num2, char symbol) {
         OperatorType op = OperatorType.matchSymbol(symbol);
@@ -21,36 +25,36 @@ public class ArithmeticCalculator<T extends Number>{
                 yield n1 / n2;
             }
         };
-        results.add(res);
+        resultList.add(res);
         return res;
     }
 
     public void getResults() {
-        for (double res : results){
+        for (double res : resultList){
             System.out.println(res);
         }
     }
 
     public void printOptionOne(double threshold) {
-        results.stream()                 // 1. 스트림 생성
+        resultList.stream()                 // 1. 스트림 생성
                 .filter(res -> res > threshold) // 2. 필터링 (람다식: 결과값 res가 기준값보다 크면 통과)
                 .forEach(System.out::println);  // 3. 최종 연산 (출력)
     }
 
     public void printOptionTwo(double threshold) {
-        results.stream()                 // 1. 스트림 생성
+        resultList.stream()                 // 1. 스트림 생성
                 .filter(res -> res == threshold) // 2. 필터링 (람다식: 결과값 res가 기준값과 같으면 통과)
                 .forEach(System.out::println);  // 3. 최종 연산 (출력)
     }
 
     public void printOptionThree(double threshold) {
-        results.stream()                 // 1. 스트림 생성
+        resultList.stream()                 // 1. 스트림 생성
                 .filter(res -> res < threshold) // 2. 필터링 (람다식: 결과값 res가 기준값보다 작으면 통과)
                 .forEach(System.out::println);  // 3. 최종 연산 (출력)
     }
 
     void removeResult(){
-        results.removeFirst();
+        resultList.removeFirst();
     }
 
 }
