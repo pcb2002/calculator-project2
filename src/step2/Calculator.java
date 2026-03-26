@@ -4,7 +4,11 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class Calculator {
-    private List<Double> results = new ArrayList<>();
+    private List<Double> resultList;
+
+    public Calculator(List<Double> resultList) {
+        this.resultList = resultList;
+    }
 
     public double calculate(int num1, int num2, char ob) {
         double res = 0;
@@ -27,16 +31,16 @@ public class Calculator {
             default:
                 System.out.print("올바른 연산자를 입력하세요.");
             }
-        results.add(res);
+        resultList.add(res);
         return res;
         }
 
         public List<Double> getResults(){
-        return results;
+        return resultList;
         }
 
         void removeResult(){
-            results.removeFirst();
+            resultList.removeFirst();
         }
 
     }

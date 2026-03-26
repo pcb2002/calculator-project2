@@ -1,6 +1,8 @@
 package step2;
 
+import java.util.ArrayList;
 import java.util.InputMismatchException;
+import java.util.List;
 import java.util.Scanner;
 
 public class Main {
@@ -8,7 +10,8 @@ public class Main {
     public static void main(String[] args) {
 
         Scanner sc = new Scanner(System.in);
-        Calculator calculator = new Calculator();
+        List<Double> resultList = new ArrayList<>();
+        Calculator calculator = new Calculator(resultList);
 
         while (true) {
             try {
